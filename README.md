@@ -1,46 +1,189 @@
-# Getting Started with Create React App
+**step-by-step guide** to **run the code** in a **production environment** after the React app is built. Here's the process:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### Step 1: Build the React App
 
-In the project directory, you can run:
+1. **Ensure the App is Ready for Production**
 
-### `npm start`
+   Before building the app, make sure your environment variables (like the Google Maps API key) are properly set in your `.env` file.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   ```bash
+   REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **Run the Build Command**
 
-### `npm test`
+   Build the app for production using the following command:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   npm run build
+   ```
 
-### `npm run build`
+   This will create a `build/` directory in your project folder containing the production-ready files (HTML, CSS, JavaScript, etc.).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Step 2: Serve the Build Locally (Optional)
+1. **Clone git repo**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+   git clone git@github.com:adeojoemmanuel/dev-post-map-hackerton.git
+```
 
-### `npm run eject`
+2. **Install a Static Server**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   To preview the production build locally, you can use a simple static server like `serve`:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   Install the `serve` package globally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```bash
+   npm install -g serve
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. **Serve the Build Directory**
 
-## Learn More
+   After installation, run the following command to serve the `build/` directory:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   serve -s build
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **View the App**
+
+   Open the browser and go to `http://localhost:5000` to see the production version of your React app.
+
+---
+
+### Step 3: Deploy the App to a Web Server
+
+After building the app, you'll want to deploy it to a server for public access. Here are common deployment methods:
+
+#### Option 1: Deploy to **Netlify**
+
+1. **Install the Netlify CLI (Optional)**
+
+   If you want to use Netlify’s command-line interface, install it:
+
+   ```bash
+   npm install -g netlify-cli
+   ```
+
+2. **Deploy via the CLI**
+
+   Deploy your app by running:
+
+   ```bash
+   netlify deploy --dir=build
+   ```
+
+   Follow the CLI instructions to configure the deployment.
+
+#### Option 2: Deploy to **Vercel**
+
+1. **Install the Vercel CLI (Optional)**
+
+   If you prefer using the Vercel CLI:
+
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Deploy via the CLI**
+
+   Deploy your app using:
+
+   ```bash
+   vercel
+   ```
+
+   Vercel will prompt you through the deployment process, including project setup and linking.
+
+#### Option 3: Deploy to **Firebase Hosting**
+
+1. **Install the Firebase CLI**
+
+   Install the Firebase CLI globally:
+
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+2. **Login to Firebase**
+
+   Log in using your Google account:
+
+   ```bash
+   firebase login
+   ```
+
+3. **Initialize Firebase Hosting**
+
+   Inside your project folder, initialize Firebase:
+
+   ```bash
+   firebase init
+   ```
+
+   During the initialization, select **Hosting**, and when asked for the public directory, type `build`.
+
+4. **Deploy**
+
+   Deploy the app using:
+
+   ```bash
+   firebase deploy
+   ```
+
+#### Option 4: Deploy to an **Apache or Nginx Server**
+
+1. **Copy the Build Files**
+
+   After the build is done, copy the contents of the `build/` folder to the web root folder of your server, such as `/var/www/html/` for Apache or Nginx.
+
+2. **Configure Apache or Nginx**
+
+   If needed, configure your server to serve the React app properly (you may need to configure rewrite rules for single-page apps).
+
+---
+
+### Step 4: Test the Live App
+
+Once deployed, you can access the app from the live URL provided by the hosting service (Netlify, Vercel, Firebase, etc.), or directly from the server’s IP/domain if self-hosted.
+
+---
+
+### Summary
+
+To run your React app after building it:
+1. **Build** your app using `npm run build`.
+2. **Serve** it locally using `serve` or deploy it using **Netlify**, **Vercel**, **Firebase Hosting**, or any other web server.
+3. **Access** the production version via the hosting service's live URL or your own web server.
+
+# build locally broken down 
+
+### Serve the Build Locally 
+
+1. **Install a Static Server**
+
+   To preview the production build locally, you can use a simple static server like `serve`:
+
+   Install the `serve` package globally:
+
+   ```bash 
+   npm install -g serve
+   ```
+
+2. **Serve the Build Directory**
+
+   After installation, run the following command to serve the `build/` directory:
+
+   ```bash
+   serve -s build
+   ```
+
+3. **View the App**
+
+   Open the browser and go to `http://localhost:5000` to see the production version of your React app.
+
+---
