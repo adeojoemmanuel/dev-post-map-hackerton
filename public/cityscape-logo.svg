@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background circle representing globe/map -->
+  <circle cx="100" cy="100" r="90" fill="#E3F2FD"/>
+  
+  <!-- Cityscape silhouette -->
+  <path d="M40 140 L40 100 L60 100 L60 120 L80 120 L80 90 L100 90 L100 70 L120 70 L120 100 L140 100 L140 110 L160 110 L160 140 Z" fill="#1976D2"/>
+  
+  <!-- 3D cube representing virtual/AR aspect -->
+  <path d="M90 40 L110 30 L130 40 L110 50 Z" fill="#0D47A1"/>
+  <path d="M90 40 L90 60 L110 70 L110 50 Z" fill="#1565C0"/>
+  <path d="M110 50 L130 40 L130 60 L110 70 Z" fill="#1976D2"/>
+  
+  <!-- Location pin -->
+  <circle cx="100" cy="100" r="5" fill="#D32F2F"/>
+  <path d="M100 100 L100 140" stroke="#D32F2F" stroke-width="3" fill="none"/>
+  
+  <!-- Company name -->
+  <text x="100" y="170" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0D47A1">CityScape</text>
+</svg>
