@@ -146,6 +146,7 @@ This project is licensed under the MIT License.
 ---
 
 ## **Step up: Clone  the Project**
+
 Step up: Clone  the Project
 
 - git clone <repository-url>
@@ -161,5 +162,4 @@ Step 2: Test the Application
 
 Step 8: Build for Production (Optional)
 ``` npm run build ```
-
 

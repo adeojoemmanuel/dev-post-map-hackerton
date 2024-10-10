@@ -1,7 +1,7 @@
 // src/services/TrafficService.ts
 import axios from 'axios';
 
-const trafficApiKey = 'YOUR_TRAFFIC_API_KEY';
+const trafficApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export const getTrafficData = async (location: string) => {
   const response = await axios.get(`https://api.traffic.com/data/${location}?apiKey=${trafficApiKey}`);
